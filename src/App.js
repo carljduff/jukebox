@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import SongLibrary from './components/SongLibrary';
 import CurrentSong from './components/CurrentSong';
+import styles from "/workspace/jukebox/src/App.module.css";
 
 function App() {
   const [ currentSongIndex, setCurrentSongIndex ] = useState(-1);
@@ -32,7 +33,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className={styles.songList}>
       {selectedSong && <CurrentSong selectedSong={selectedSong} />}
       <SongLibrary songs={songs} handleClick={handleClick} />
     </div>
